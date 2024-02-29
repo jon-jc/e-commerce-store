@@ -3,7 +3,8 @@
 import { Product } from "@/types";
 import Image from "next/image";
 import IconButton from "@/components/ui/icon-button";
-import { Expand } from "lucide-react";
+import { Expand, ShoppingCart } from "lucide-react";
+import Currency from "@/components/ui/currency";
 
 interface ProductCard {
   data: Product;
@@ -26,8 +27,21 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
               onClick={() => {}}
               icon={<Expand size={20} className="text-gray-600" />}
             />
+            <IconButton
+              onClick={() => {}}
+              icon={<ShoppingCart size={20} className="text-gray-600" />}
+            />
           </div>
         </div>
+      </div>
+      {/* Product details and Categories */}
+      <div>
+        <p className="font-semibold text-lg">{data.name}</p>
+        <p className="text-sm text-slate-500"> {data.category?.name}</p>
+      </div>
+      {/* Price */}
+      <div className="flex items-center justify-between">
+        <Currency value={data?.price} />
       </div>
     </div>
   );
