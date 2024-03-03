@@ -3,12 +3,13 @@
 import { Product } from "@/types";
 import Image from "next/image";
 import IconButton from "@/components/ui/icon-button";
-import { Expand, ShoppingCart } from "lucide-react";
+import { CiShoppingCart } from "react-icons/ci";
 import Currency from "@/components/ui/currency";
 import { useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
+import { IoExpand } from "react-icons/io5";
 
 interface ProductCard {
   data: Product;
@@ -50,11 +51,11 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
           <div className="flex gap-x-6 justify-center">
             <IconButton
               onClick={onPreview}
-              icon={<Expand size={20} className="text-gray-600" />}
+              icon={<IoExpand size={20} className="text-gray-600" />}
             />
             <IconButton
               onClick={onAddToCart}
-              icon={<ShoppingCart size={20} className="text-gray-600" />}
+              icon={<CiShoppingCart size={20} className="text-gray-600" />}
             />
           </div>
         </div>

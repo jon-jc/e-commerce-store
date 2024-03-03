@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingCart } from "lucide-react";
+import { CiShoppingCart } from "react-icons/ci";
 
 import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/Button";
@@ -43,7 +43,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
       <div className="mt-10 flex items-center gap-x-3">
         <Button onClick={onAddToCart} className="flex items-center gap-x-2">
           Add To Cart
-          <ShoppingCart size={20} />
+          <CiShoppingCart size={20} />
         </Button>
       </div>
     </div>
